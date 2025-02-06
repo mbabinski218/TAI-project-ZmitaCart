@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZmitaCart.API", "ZmitaCart.API\ZmitaCart.API.csproj", "{D7024DBC-AFBE-46FA-97D8-366EA76A8A29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZmitaCart.Application", "ZmitaCart.Application\ZmitaCart.Application.csproj", "{9875F239-2007-485B-BD50-4FF18645B88B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZmitaCart.Domain", "ZmitaCart.Domain\ZmitaCart.Domain.csproj", "{D85345DD-643A-4467-A8E7-358D15667794}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZmitaCart.Infrastructure", "ZmitaCart.Infrastructure\ZmitaCart.Infrastructure.csproj", "{70EB676D-61D6-4AA0-83B1-CE9618056A16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{809D8038-C10D-439B-9A96-15512CF35BB2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{63EAC4A3-D27A-4FE6-9EC5-967C3622F3F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZmitaCart.Application.UnitTests", "ZmitaCart.Application.UnitTests\ZmitaCart.Application.UnitTests.csproj", "{F6E43219-D5CD-4985-93D0-2B6FD6436E6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7024DBC-AFBE-46FA-97D8-366EA76A8A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7024DBC-AFBE-46FA-97D8-366EA76A8A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7024DBC-AFBE-46FA-97D8-366EA76A8A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7024DBC-AFBE-46FA-97D8-366EA76A8A29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9875F239-2007-485B-BD50-4FF18645B88B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9875F239-2007-485B-BD50-4FF18645B88B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9875F239-2007-485B-BD50-4FF18645B88B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9875F239-2007-485B-BD50-4FF18645B88B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D85345DD-643A-4467-A8E7-358D15667794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D85345DD-643A-4467-A8E7-358D15667794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D85345DD-643A-4467-A8E7-358D15667794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D85345DD-643A-4467-A8E7-358D15667794}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70EB676D-61D6-4AA0-83B1-CE9618056A16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70EB676D-61D6-4AA0-83B1-CE9618056A16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70EB676D-61D6-4AA0-83B1-CE9618056A16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70EB676D-61D6-4AA0-83B1-CE9618056A16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6E43219-D5CD-4985-93D0-2B6FD6436E6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6E43219-D5CD-4985-93D0-2B6FD6436E6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6E43219-D5CD-4985-93D0-2B6FD6436E6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6E43219-D5CD-4985-93D0-2B6FD6436E6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC77E866-E2DA-491B-A3E2-CD01740E0105}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{70EB676D-61D6-4AA0-83B1-CE9618056A16} = {809D8038-C10D-439B-9A96-15512CF35BB2}
+		{D85345DD-643A-4467-A8E7-358D15667794} = {809D8038-C10D-439B-9A96-15512CF35BB2}
+		{9875F239-2007-485B-BD50-4FF18645B88B} = {809D8038-C10D-439B-9A96-15512CF35BB2}
+		{D7024DBC-AFBE-46FA-97D8-366EA76A8A29} = {809D8038-C10D-439B-9A96-15512CF35BB2}
+		{F6E43219-D5CD-4985-93D0-2B6FD6436E6B} = {63EAC4A3-D27A-4FE6-9EC5-967C3622F3F3}
+	EndGlobalSection
+EndGlobal

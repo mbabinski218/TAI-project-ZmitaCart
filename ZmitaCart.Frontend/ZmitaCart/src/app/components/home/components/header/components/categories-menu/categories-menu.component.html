@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="categories">
+    <div
+      class="item"
+      *ngFor="let category of categories"
+      (mouseenter)="openSubCategories(category)"
+      (click)="openCategory(category.id)"
+    >
+      <mat-icon>{{ category.iconName }}</mat-icon>
+      <div class="fix">
+        {{ category.name }}
+        <mat-icon>chevron_right</mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <ng-container *ngIf="subcategories$ | async as subcategory">
+    <div
+      class="subcategories"
+      *ngIf="subcategory.children && subcategory.children.length > 0"
+    >
+      <div *ngFor="let child of subcategory.children; let index = index">
+        <div
+          class="flex-item"
+          *ngIf="child.children && child.children.length > 0; else noKids"
+        >
+          <span
+            class="data"
+            (click)="openCategory(child.id)"
+          >
+            {{ child.name }}
+          </span>
+          <pp-subcategories-menu [subcategories]="child.children"></pp-subcategories-menu>
+        </div>
+
+        <ng-template #noKids>
+          <div
+            class="data"
+            (click)="openCategory(child.id)"
+          >
+            {{ child.name }}
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </ng-container>
+</div>

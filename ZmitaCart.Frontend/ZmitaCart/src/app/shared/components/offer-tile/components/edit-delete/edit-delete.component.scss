@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 15px 45px 15px 0;
+}
+
+.icon {
+  color: var(--color-allegro-purple);
+}

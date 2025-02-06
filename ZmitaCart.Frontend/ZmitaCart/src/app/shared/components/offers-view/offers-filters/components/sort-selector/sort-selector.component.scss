@@ -1,0 +1,39 @@
+.select {
+  height: 40px;
+  position: relative;
+  width: fit-content;
+
+  .title {
+    color: #767676;
+    font-size: var(--font-normal);
+    margin-right: 24px;
+  }
+
+  .options {
+    border-radius: 8px;
+    font-size: var(--font-normal);
+    line-height: var(--lineHeight-m);
+    color: #222;
+    height: 100%;
+    width: 136px;
+    border: 0;
+    box-shadow: inset 0 0 0 1px #aaa;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    padding: 8px 36px 8px 16px;
+  }
+
+  .icon {
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-45%);
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    color: var(--color-allegro-green);
+  }
+}

@@ -1,0 +1,58 @@
+<mat-form-field
+  class="form-field"
+  [appearance]="appearance"
+  [hideRequiredMarker]="true"
+>
+  <mat-label>
+    {{ label }}
+    <ng-container *ngIf="optional">(Opcjonalne)</ng-container>
+  </mat-label>
+
+  <input
+    #input
+    matInput
+    id="{{ 'search-' + label }}"
+    [formControl]="getControl"
+    [attr.disabled]="control.disabled"
+    [placeholder]="visiblePlaceholder"
+    [readonly]="readonly"
+    [type]="type"
+    [inputMask]="_mask"
+    [errorStateMatcher]="matcher"
+    [maxLength]="maxLength"
+    [min]="min"
+  />
+
+  <div
+    matSuffix
+    class="suffixInside"
+    *ngIf="suffixTemplate"
+  >
+    <ng-container *ngTemplateOutlet="suffixTemplate"></ng-container>
+  </div>
+
+  <mat-error
+    *ngIf="errorMessage !== null"
+    class="error"
+  >
+    <span> {{ errorMessage }}</span>
+
+    <span *ngIf="hint">
+      <ng-container *ngTemplateOutlet="hint"></ng-container>
+    </span>
+  </mat-error>
+
+  <mat-hint
+    *ngIf="hint"
+    [align]="hintAlign"
+  >
+    <ng-container *ngTemplateOutlet="hint"></ng-container>
+  </mat-hint>
+</mat-form-field>
+
+<mat-icon
+  class="suffixOutside"
+  *ngIf="suffixOutsideTemplate"
+>
+  <ng-container *ngTemplateOutlet="suffixOutsideTemplate"></ng-container>
+</mat-icon>

@@ -1,0 +1,17 @@
+<ng-container *ngFor="let child of subcategories">
+  <ng-container *ngIf="child.children && child.children.length > 0; else isLastTemplate">
+    <span
+      (click)="openCategory(child.id)"
+      class="isMain"
+    >
+      {{ child.name }}
+    </span>
+    <pp-subcategories-menu [subcategories]="child.children"></pp-subcategories-menu>
+  </ng-container>
+  <ng-template #isLastTemplate>
+    <span
+      (click)="openCategory(child.id)"
+      class="isLast"
+    >{{ child.name }}<br></span>
+  </ng-template>
+</ng-container>

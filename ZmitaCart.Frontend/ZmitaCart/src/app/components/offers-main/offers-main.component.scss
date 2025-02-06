@@ -1,0 +1,171 @@
+:host {
+  display: block;
+  margin-block: 16px;
+}
+
+.title {
+  width: 254px;
+  min-height: 432px;
+  border-radius: 8px;
+
+  background-position: 50%;
+  background-color: rgba(98, 86, 177, .75);
+
+  .text {
+    padding: 16px;
+    font-size: var(--font-l);
+    font-weight: 700;
+    color: #fff;
+    white-space: normal;
+  }
+}
+
+.img {
+  width: 254px;
+  height: 212px;
+  user-select: none;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.offers {
+  display: flex;
+  flex-direction: column;
+}
+
+.offer {
+  display: flex;
+  gap: var(--gap-xs);
+}
+
+.category {
+  display: flex;
+  flex-direction: row;
+
+  &-border {
+    border-radius: 8px;
+  }
+
+  &-image0 {
+    background-image: url(https://storage.googleapis.com/lokalnie-prod-assets/static/carousels/smartphones.jpg);
+  }
+
+  &-image1 {
+    background-image: url(https://storage.googleapis.com/lokalnie-prod-assets/static/carousels/board_games_second_hand.jpg);
+  }
+
+  &-image2 {
+    background-image: url(https://storage.googleapis.com/lokalnie-prod-assets/static/carousels/art_from_private_collectors.jpg);
+  }
+
+  &-image3 {
+    background-image: url(https://storage.googleapis.com/lokalnie-prod-assets/static/carousels/latest_moto_offer.jpg);
+  }
+}
+
+.item {
+  width: 254px;
+  min-height: 432px;
+  margin-left: 8px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .16);
+  position: relative;
+
+  &:first-child {
+    margin-left: 0px;
+  }
+}
+
+.content {
+  white-space: normal;
+  word-break: break-word;
+  padding-inline: 12px;
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+
+  .name {
+    line-height: var(--lineHeight-m);
+  }
+
+  .heart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 80%;
+    top: calc(50% - 25px);
+    width: 40px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .16);
+    height: 40px;
+
+    .svg {
+      filter: brightness(0) saturate(100%) invert(41%) sepia(40%) saturate(4250%) hue-rotate(147deg) brightness(98%) contrast(101%);
+    }
+  }
+
+  .price {
+    font-size: var(--font-l);
+    line-height: var(--lineHeight-l);
+    font-weight: 600;
+
+    .zl {
+      font-size: var(--font-m);
+      line-height: var(--lineHeight-m);
+      font-weight: 600;
+    }
+  }
+
+  .condition {
+    color: rgb(118, 118, 118);
+    font-size: var(--font-xs);
+    font-weight: 600;
+    line-height: var(--lineHeight-s);
+    border: 1px solid #dddbee;
+    width: fit-content;
+    padding-inline: 4px;
+    border-radius: 8px;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xxs);
+
+    .icon {
+      font-size: var(--font-xs);
+      width: 12px;
+      height: 12px;
+      color: var(--color-allegro-purple);
+    }
+  }
+
+  .city {
+    position: absolute;
+    bottom: 8px;
+    left: 12px;
+
+    font-size: var(--font-xs);
+    line-height: var(--lineHeight-s);
+    color: rgb(118, 118, 118);
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xxs);
+    font-style: italic;
+
+    .icon {
+      font-size: var(--font-m);
+      width: 17px;
+      height: 17px;
+      color: rgb(118, 118, 118);
+    }
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}

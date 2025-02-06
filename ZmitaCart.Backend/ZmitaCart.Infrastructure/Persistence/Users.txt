@@ -1,0 +1,32 @@
+﻿--Użytkownicy
+--Email: user1@zmitacart.pl, user2@zmitacart.pl, admin@zmitacart.pl
+--Hasło: Password123!
+
+SET IDENTITY_INSERT Users ON
+INSERT INTO Users (Id, FirstName, LastName, Address_Country, Address_City, Address_Street, Address_PostalCode, Address_HouseNumber, Address_ApartmentNumber, UserName, NormalizedUserName, Email, NormalizedEmail, EmailConfirmed, PasswordHash, SecurityStamp, ConcurrencyStamp, PhoneNumber, PhoneNumberConfirmed, TwoFactorEnabled, LockoutEnd, LockoutEnabled, AccessFailedCount, CreatedAt, UpdatedAt) VALUES (1, N'user1', N'testowy', N'Polska', N'Gliwice', N'Wrocławska', 44100, 12, null, N'user1@zmitacart.pl', N'USER1@ZMITACART.PL', N'user1@zmitacart.pl', N'USER1@ZMITACART.PL', 1, N'AQAAAAIAAYagAAAAEFDTOP7AQ50fGGYi7GBT6CHxKu2Rw0ZVlkKgHGi3LhkE7++0NQdtyWkL1BOFZaMY4w==', N'IFF4DICXQB2M5KNSVOF5CXMFCIHY4WYE', N'd4273f93-3ba0-4be4-a845-d5334a6e0a51', N'1234567', 0, 0, null, 1, 0, N'2024-10-19 15:51:06.8640792 +00:00', N'2024-10-19 15:51:07.9832169 +00:00');
+INSERT INTO Users (Id, FirstName, LastName, Address_Country, Address_City, Address_Street, Address_PostalCode, Address_HouseNumber, Address_ApartmentNumber, UserName, NormalizedUserName, Email, NormalizedEmail, EmailConfirmed, PasswordHash, SecurityStamp, ConcurrencyStamp, PhoneNumber, PhoneNumberConfirmed, TwoFactorEnabled, LockoutEnd, LockoutEnabled, AccessFailedCount, CreatedAt, UpdatedAt) VALUES (2, N'user2', N'testowy', N'Anglia', N'Northampton', N'Południowa', 12345, 218, 17, N'user2@zmitacart.pl', N'USER2@ZMITACART.PL', N'user2@zmitacart.pl', N'USER2@ZMITACART.PL', 1, N'AQAAAAIAAYagAAAAEFDTOP7AQ50fGGYi7GBT6CHxKu2Rw0ZVlkKgHGi3LhkE7++0NQdtyWkL1BOFZaMY4w==', N'UMBRSJCVR54DSCSPA3G32TO2KU5OAZQB', N'e10abbf4-a9f0-4ed4-b1d2-c46b6dc21ddf', N'7654321', 0, 0, null, 1, 0, N'2024-10-19 15:53:45.4317805 +00:00', N'2024-10-19 15:53:45.9761531 +00:00');
+INSERT INTO Users (Id, FirstName, LastName, Address_Country, Address_City, Address_Street, Address_PostalCode, Address_HouseNumber, Address_ApartmentNumber, UserName, NormalizedUserName, Email, NormalizedEmail, EmailConfirmed, PasswordHash, SecurityStamp, ConcurrencyStamp, PhoneNumber, PhoneNumberConfirmed, TwoFactorEnabled, LockoutEnd, LockoutEnabled, AccessFailedCount, CreatedAt, UpdatedAt) VALUES (3, N'admin', N'testowy', N'Polska', N'Warszawa', N'Mokotowska', 32652, 5, 8, N'admin@zmitacart.pl', N'ADMIN@ZMITACART.PL', N'admin@zmitacart.pl', N'ADMIN@ZMITACART.PL', 1, N'AQAAAAIAAYagAAAAEFDTOP7AQ50fGGYi7GBT6CHxKu2Rw0ZVlkKgHGi3LhkE7++0NQdtyWkL1BOFZaMY4w==', N'YUJDNOXWLBQBZ3KSX76ULI4UC5TQVM47', N'0529db39-cbaa-457d-8a28-be46dd0c1b42', N'1237654', 0, 0, null, 1, 0, N'2024-10-19 15:54:03.4396575 +00:00', N'2024-10-19 15:54:04.4567838 +00:00');
+SET IDENTITY_INSERT Users OFF
+
+INSERT INTO UserRoles (UserId, RoleId) VALUES (3, 1);
+INSERT INTO UserRoles (UserId, RoleId) VALUES (1, 2);
+INSERT INTO UserRoles (UserId, RoleId) VALUES (2, 2);
+INSERT INTO UserRoles (UserId, RoleId) VALUES (3, 2);
+
+SET IDENTITY_INSERT UserClaims ON
+INSERT INTO UserClaims (Id, UserId, ClaimType, ClaimValue) VALUES (1, 1, N'id', N'1');
+INSERT INTO UserClaims (Id, UserId, ClaimType, ClaimValue) VALUES (2, 1, N'email', N'test1@zmitacart.pl');
+INSERT INTO UserClaims (Id, UserId, ClaimType, ClaimValue) VALUES (3, 1, N'firstName', N'user1');
+INSERT INTO UserClaims (Id, UserId, ClaimType, ClaimValue) VALUES (4, 1, N'lastName', N'testowy');
+INSERT INTO UserClaims (Id, UserId, ClaimType, ClaimValue) VALUES (5, 1, N'role', N'User');
+INSERT INTO UserClaims (Id, UserId, ClaimType, ClaimValue) VALUES (6, 2, N'id', N'2');
+INSERT INTO UserClaims (Id, UserId, ClaimType, ClaimValue) VALUES (7, 2, N'email', N'test2@zmitacart.pl');
+INSERT INTO UserClaims (Id, UserId, ClaimType, ClaimValue) VALUES (8, 2, N'firstName', N'user2');
+INSERT INTO UserClaims (Id, UserId, ClaimType, ClaimValue) VALUES (9, 2, N'lastName', N'testowy');
+INSERT INTO UserClaims (Id, UserId, ClaimType, ClaimValue) VALUES (10, 2, N'role', N'User');
+INSERT INTO UserClaims (Id, UserId, ClaimType, ClaimValue) VALUES (11, 3, N'id', N'3');
+INSERT INTO UserClaims (Id, UserId, ClaimType, ClaimValue) VALUES (12, 3, N'email', N'admin2@zmitacart.pl');
+INSERT INTO UserClaims (Id, UserId, ClaimType, ClaimValue) VALUES (13, 3, N'firstName', N'admin');
+INSERT INTO UserClaims (Id, UserId, ClaimType, ClaimValue) VALUES (14, 3, N'lastName', N'testowy');
+INSERT INTO UserClaims (Id, UserId, ClaimType, ClaimValue) VALUES (15, 3, N'role', N'Administrator');
+SET IDENTITY_INSERT UserClaims OFF

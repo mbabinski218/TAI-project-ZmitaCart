@@ -1,0 +1,102 @@
+<div class="content fixWidth">
+  <div class="maxWidth">
+    <form
+      [formGroup]="form"
+      class="box"
+      (ngSubmit)="login()"
+    >
+      <span class="login">Zaloguj się</span>
+      <pp-input
+        label="login lub e-mail"
+        placeholder="Wprowadź adres e-mail"
+        controlName="email"
+        [ppErrorMessage]="{
+            required: 'Wprowadź adres e-mail',
+            pattern: 'Adres e-mail jest nieprawidłowy',
+            busy: 'Podany adres e-mail jest już używany'
+			    }"
+      >
+      </pp-input>
+
+      <pp-input
+        label="hasło"
+        placeholder="8-30 znaków, w tym cyfra"
+        controlName="password"
+        [type]="passwordVisible ? 'text' : 'password'"
+        [suffixTemplate]="suffixPassword"
+        [ppErrorMessage]="{
+            required: 'Wprowadź hasło',
+            pattern: 'Hasło powinno zawierać od 8 do 30 znaków, w tym jedna cyfra'
+			    }"
+      >
+      </pp-input>
+
+      <div class="get" style="text-align: center;">
+        <a
+          class="text"
+          target="_blank"
+          (click)="resandEmail()"
+          style="cursor: pointer;"
+        >
+          Wyślij ponownie e-mail z linkiem aktywacyjnym
+        </a>
+      </div>
+      <button
+        type="submit"
+        class="button button-login cursor-pointer"
+      >
+        ZALOGUJ SIĘ
+      </button>
+
+      <div class="or">
+        <div class="line"></div>
+        <span>lub</span>
+        <div class="line"></div>
+      </div>
+
+      <pp-google-login class="margin"></pp-google-login>
+    </form>
+
+    <div class="box nextBox">
+      <b>Nie masz konta?</b> <span
+        [routerLink]="REGISTER_LINK"
+        class="register cursor-pointer"
+      >
+        ZAŁÓŻ KONTO
+      </span>
+    </div>
+  </div>
+  <div class="box remove"></div>
+
+
+</div>
+<div class="regulamin fixWidth">
+  Logując się do ZmitaCart akceptujesz
+  <a
+    class="regulamin link"
+    href=""
+    target="_blank"
+  >
+    Regulamin
+  </a>
+  w aktualnym brzmieniu obowiązującym od dnia 29.02.1928. Informacje o
+  planowanych oraz archiwalnych zmianach Regulaminu są dostępne na
+  <a
+    class="regulamin link"
+    href=""
+    target="_blank"
+  >
+    stronie
+  </a>
+</div>
+
+
+<ng-template #suffixPassword>
+  <mat-icon
+    matSuffix
+    class="cursor-pointer"
+    (click)="togglePasswordVisibility()"
+  >
+    {{ passwordVisible ? 'visibility_off' : 'visibility' }}
+  </mat-icon>
+</ng-template>

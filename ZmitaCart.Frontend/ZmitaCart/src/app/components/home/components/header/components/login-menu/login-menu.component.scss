@@ -1,0 +1,55 @@
+@import 'variables/breakpoints';
+
+.paint {
+  cursor: pointer;
+
+  &-resize {
+    transform: scale(1.25);
+    display: flex;
+  }
+
+  &:hover {
+    filter: brightness(0) saturate(100%) invert(41%) sepia(40%) saturate(4250%) hue-rotate(147deg) brightness(98%) contrast(101%);
+  }
+}
+
+.container {
+  position: absolute;
+  right: 0;
+}
+
+.list {
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .06), 0 -2px 6px 0 rgba(0, 0, 0, .06);
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  background: #fff;
+  border-radius: 8px;
+  width: 230px;
+}
+
+.item {
+  cursor: pointer;
+  color: #000;
+  padding: 16px 24px;
+  text-decoration: none;
+  text-align: left;
+  white-space: nowrap;
+  display: flex;
+  gap: var(--gap-xs);
+
+  &:hover {
+    color: var(--color-allegro-green);
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}

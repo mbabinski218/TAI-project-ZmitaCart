@@ -1,0 +1,98 @@
+<div class="fix">
+  <div class="header">
+    <div class="text">{{ header }}</div>
+    <div
+      *ngIf="areAnyLogs"
+      class="pagination"
+    ></div>
+
+  </div>
+
+  <div class="content">
+
+    <div class="filter-section">
+      <input
+        type="text"
+        placeholder="filtruj według..."
+        [(ngModel)]="searchText"
+      />
+
+      <label class="status-label">Data od
+        <input
+          type="datetime-local"
+          placeholder="Date From"
+          [(ngModel)]="dateFrom"
+        />
+      </label>
+
+      <label class="status-label">do
+        <input
+          type="datetime-local"
+          placeholder="Date To"
+          [(ngModel)]="dateTo"
+        />
+      </label>
+
+      <label class="status-label">Status
+        <select [(ngModel)]="status">
+          <option [ngValue]="null">Both</option>
+          <option [ngValue]="true">Success</option>
+          <option [ngValue]="false">Failed</option>
+        </select>
+      </label>
+
+      <button (click)="applyFilters()">FILTRUJ</button>
+      <button (click)="resetFilters()">RESETUJ</button>
+    </div>
+
+    <ng-container *ngIf="logs$ | async as logs; else loading">
+      <ng-container *ngIf="logs.items.length; else noData">
+        <pp-log [items]="logs.items" />
+      </ng-container>
+    </ng-container>
+
+    <div
+      *ngIf="areAnyLogs"
+      class="footer"
+    >
+      <ng-container [ngTemplateOutlet]="pagination"></ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #noData>
+  <div class="text">{{ noDataText }}</div>
+</ng-template>
+
+<ng-template #loading>
+  <div class="center">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+
+<ng-template #pagination>
+  <mat-icon
+    [class.hide]="!canGo.left"
+    class="cursor-pointer"
+    (click)="paginationService.nextPage(-1)"
+  >
+    arrow_back_ios
+  </mat-icon>
+  <div class="page">
+    <input
+      class="input"
+      type="number"
+      [value]="currentPage"
+      #pageNumberInput
+      (keydown.enter)="paginationService.changeToPage(pageNumberInput.value)"
+    >
+    <span>z {{ totalPages }}</span>
+  </div>
+  <mat-icon
+    [class.hide]="!canGo.right"
+    class="cursor-pointer"
+    (click)="paginationService.nextPage(1)"
+  >
+    arrow_forward_ios
+  </mat-icon>
+</ng-template>

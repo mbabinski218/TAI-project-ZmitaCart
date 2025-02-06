@@ -1,0 +1,19 @@
+<span class="title">Filtry</span>
+
+<pp-sort-selector (sortByEmitter)="setAll($event)"></pp-sort-selector>
+
+<pp-quality-checkboxes (checkboxesEmitter)="setAll($event)"></pp-quality-checkboxes>
+
+<pp-price-input
+  (pricesEmitter)="setAll($event)"
+  (hasErrors)="hasErrors = $event"
+>
+</pp-price-input>
+
+<div
+  class="button-allegro button"
+  [class.hasErrors]="hasErrors"
+  (click)="!hasErrors && submit()"
+>
+  Pokaż wyniki
+</div>

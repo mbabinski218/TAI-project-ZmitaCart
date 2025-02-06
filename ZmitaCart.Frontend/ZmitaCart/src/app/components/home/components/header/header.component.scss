@@ -1,0 +1,243 @@
+@import 'variables/breakpoints';
+
+:host {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.svg {
+  transform: scale(1.25);
+  cursor: pointer;
+
+  &-menu {
+    transform: scale(1.12);
+  }
+
+  &:hover {
+    filter: brightness(0) saturate(100%) invert(41%) sepia(40%) saturate(4250%) hue-rotate(147deg) brightness(98%) contrast(101%);
+  }
+}
+
+.header {
+  background: #fff;
+
+  transition: padding-top .2s ease,
+    padding-bottom .2s ease,
+    box-shadow .2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+}
+
+.content {
+  min-height: 92px;
+
+  display: grid;
+  align-items: center;
+  grid-template-columns: min-content auto min-content min-content;
+  grid-template-areas:
+    "image image button actions"
+    "menu form form form";
+
+  @media (min-width: $screen-768) {
+    grid-template-columns: min-content auto auto min-content;
+    grid-template-areas:
+      "image image actions button"
+      "menu form form form";
+  }
+
+  @media (min-width: $screen-1064) {
+    grid-template-columns: min-content auto 1fr auto auto;
+    grid-template-areas: "menu image form actions button";
+  }
+
+  @media (max-width: $screen-1064) {
+    padding-top: 16px;
+    padding-bottom: 8px;
+  }
+
+  .menu {
+    grid-area: menu;
+
+    cursor: pointer;
+    margin-right: 8px;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @media (max-width: $screen-1064) {
+      margin-top: 13px;
+    }
+  }
+
+  .image {
+    grid-area: image;
+
+    display: flex;
+    margin: 4px 16px 4px 4px;
+
+    .img {
+      width: 155px;
+    }
+  }
+
+  .form {
+    grid-area: form;
+
+    display: flex;
+
+    @media (min-width: $screen-1064) {
+      padding: 0 16px;
+      min-width: 360px;
+      max-width: 890px;
+    }
+
+    @media (max-width: $screen-1064) {
+      padding-top: 12px;
+    }
+
+    .search-form {
+      background: #fff;
+      display: flex;
+      height: 40px;
+      width: 100%;
+      min-width: 180px;
+      flex: 1;
+      border: 1px solid #aaa;
+      border-radius: 8px;
+
+      @media (min-width: $screen-768) {
+        border-radius: 8px 0 0 8px;
+      }
+
+      :focus-visible {
+        outline: none !important;
+      }
+
+      .input {
+        display: block;
+        width: 100%;
+        background-color: transparent;
+        border: 0;
+        padding: 8px 24px;
+        font-size: var(--font-m);
+      }
+    }
+
+    .categories-form {
+      @media (max-width: $screen-768) {
+        display: none;
+      }
+
+      position: relative;
+      right: 1px;
+      background: #fff;
+      display: flex;
+      height: 40px;
+      width: 272px;
+      max-width: 40%;
+      min-width: 180px;
+      border: 1px solid #aaa;
+      border-radius: 0 8px 8px 0;
+
+      :focus-visible {
+        outline: none !important;
+      }
+
+      .select {
+        display: block;
+        width: 100%;
+        border: 0;
+        background-color: transparent;
+        padding: 8px 38px;
+        font-size: var(--font-m);
+
+        background-image: url(/assets/images/arrow.svg);
+
+        background-repeat: no-repeat;
+        background-size: 28px;
+        background-position: 88%;
+
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+    }
+  }
+
+  .fix {
+    position: relative;
+    top: 7px;
+    right: 21px;
+    margin-right: -5px;
+
+    &:hover {
+      filter: none;
+    }
+  }
+
+  .relative {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .icon {
+      position: absolute;
+      right: 45px;
+
+      font-size: var(--font-normal);
+      font-weight: 600;
+      height: 14px;
+      width: 14px;
+    }
+  }
+
+  .actions {
+    grid-area: actions;
+
+    display: flex;
+    gap: var(--gap-m);
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+  }
+
+
+  .fixer {
+    position: relative;
+
+    .badge {
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 2px;
+      left: 24px;
+    }
+  }
+
+  .button {
+    grid-area: button;
+
+    margin-left: 32px;
+    width: 162px;
+    height: 40px;
+    color: #fff;
+    background-color: #6256b1;
+  }
+}
+
+
+.hide {
+  display: flex !important;
+  justify-content: space-between;
+
+  .add {
+    display: none;
+  }
+
+  .actions {
+    margin-left: auto;
+  }
+}

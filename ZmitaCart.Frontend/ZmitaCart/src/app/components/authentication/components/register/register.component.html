@@ -1,0 +1,108 @@
+<div class="content fixWidth">
+  <span class="title">Załóż konto</span>
+  <form
+    [formGroup]="form"
+    class="box"
+    (ngSubmit)="register()"
+  >
+    <div class="name">
+      <pp-input
+        label="Imię"
+        placeholder="Wprowadź imię"
+        controlName="firstName"
+        [ppErrorMessage]="{
+            required: 'Wprowadź imię',
+            maxlength: 'Imię powinno zawierać maks. 35 znaków'
+          }"
+      >
+      </pp-input>
+
+      <pp-input
+        label="Nazwisko"
+        placeholder="Wprowadź nazwisko"
+        controlName="lastName"
+        [ppErrorMessage]="{
+            required: 'Wprowadź nazwisko',
+            maxlength: 'Nazwisko powinno zawierać maks. 35 znaków'
+          }"
+      >
+      </pp-input>
+    </div>
+
+    <pp-input
+      label="E-mail"
+      placeholder="Wprowadź adres e-mail"
+      controlName="email"
+      [ppErrorMessage]="{
+          required: 'Wprowadź adres e-mail',
+          pattern: 'Adres e-mail jest nieprawidłowy',
+          busy: 'Podany adres e-mail jest już używany'
+        }"
+    >
+    </pp-input>
+
+    <pp-input
+      label="Hasło"
+      placeholder="8 - 30 znaków, w tym cyfra"
+      controlName="password"
+      [type]="passwordVisibility.password ? 'text' : 'password'"
+      [suffixTemplate]="suffixPassword"
+      [ppErrorMessage]="{
+          required: 'Wprowadź hasło',
+          pattern: 'Hasło powinno zawierać od 8 do 30 znaków, w tym jedna cyfra'
+        }"
+    >
+    </pp-input>
+
+    <pp-input
+      label="Powtórz hasło"
+      placeholder="Wprowadź hasło"
+      controlName="confirmedPassword"
+      [type]="passwordVisibility.confirmedPassword ? 'text' : 'password'"
+      [suffixTemplate]="suffixConfirmedPassword"
+      [ppErrorMessage]="{
+          required: 'Wprowadź hasło',
+          mustMatch: 'Hasła nie są identyczne'
+        }"
+    >
+    </pp-input>
+
+    <div class="move">
+      <button
+        type="submit"
+        class="button button-register cursor-pointer"
+      >
+        ZAŁÓŻ KONTO
+      </button>
+    </div>
+  </form>
+</div>
+<div class="regulamin fixWidth">
+  Administratorem Twoich danych osobowych jest Allegro sp. z o.o. z siedzibą w Poznaniu
+  <a
+    class="regulamin link"
+    href="https://imgur.com/t/cursed_images/rhxyAwE"
+    target="_blank"
+  >
+    rozwiń
+  </a>
+</div>
+
+<ng-template #suffixPassword>
+  <mat-icon
+    matSuffix
+    class="cursor-pointer"
+    (click)="togglePasswordVisibility('password')"
+  >
+    {{ passwordVisibility.password ? 'visibility_off' : 'visibility' }}
+  </mat-icon>
+</ng-template>
+
+<ng-template #suffixConfirmedPassword>
+  <mat-icon
+    class="cursor-pointer"
+    (click)="togglePasswordVisibility('confirmedPassword')"
+  >
+    {{ passwordVisibility.confirmedPassword ? 'visibility_off' : 'visibility' }}
+  </mat-icon>
+</ng-template>

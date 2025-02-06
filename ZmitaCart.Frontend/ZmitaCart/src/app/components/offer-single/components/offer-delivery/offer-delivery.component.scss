@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+}
+
+.delivery {
+  font-size: var(--font-m);
+  line-height: var(--lineHeight-l);
+  font-weight: 600;
+}
+
+.space {
+  display: flex;
+  justify-content: space-between;
+}

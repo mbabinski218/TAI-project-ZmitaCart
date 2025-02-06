@@ -1,0 +1,1 @@
+export type DetailDataType = string | number | boolean | object;

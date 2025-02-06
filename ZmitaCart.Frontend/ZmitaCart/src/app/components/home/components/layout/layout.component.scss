@@ -1,0 +1,38 @@
+@import 'variables/breakpoints';
+
+:host {
+  background-color: var(--background-color);
+  display: flex;
+  // min-height: 100vh;
+}
+
+.main {
+  // min-height: 100vh;
+  padding-top: 92px;
+  width: 100%;
+}
+
+.content {
+  // height: 100%;
+}
+
+.content-inner {
+  // min-height: 100%;
+  
+  @media (max-width: $screen-1064) {
+    padding-top: 16px;
+    padding-bottom: 8px;
+  }
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.32);
+  height: 100%;
+  width: 100%;
+  left: 0;
+  pointer-events: auto;
+  position: fixed;
+  top: 0;
+  transform: translate(0, 0);
+  transition: all 0s ease 0s;
+}

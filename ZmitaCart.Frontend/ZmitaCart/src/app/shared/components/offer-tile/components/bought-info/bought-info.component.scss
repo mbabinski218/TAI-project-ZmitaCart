@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 15px 45px 25px 0;
+}
+
+.bought {
+  color: #767676;
+  font-size: var(--font-xs);
+  font-weight: 600;
+}

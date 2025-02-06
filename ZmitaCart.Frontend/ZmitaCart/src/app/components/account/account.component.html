@@ -1,0 +1,24 @@
+<div
+  class="container"
+  *ngIf="currentView$ | async as currentView"
+>
+  <div>
+    <mat-button-toggle-group
+      [vertical]="true"
+      [value]="currentView"
+      (change)="switch($event.value)"
+    >
+      <ng-container *ngFor="let switch of USER_SWITCHES">
+        <mat-button-toggle [value]="switch.value">{{ switch.name }}</mat-button-toggle>
+      </ng-container>
+    </mat-button-toggle-group>
+  </div>
+
+  <ng-container [ngSwitch]="currentView">
+    <pp-user-data *ngSwitchCase="'credentials'"></pp-user-data>
+    <pp-user-favourites *ngSwitchCase="'observed'"></pp-user-favourites>
+    <pp-user-offers *ngSwitchCase="'offers'"></pp-user-offers>
+    <pp-user-bought *ngSwitchCase="'bought'"></pp-user-bought>
+    <pp-address-form *ngSwitchCase="'update'"></pp-address-form>
+  </ng-container>
+</div>

@@ -1,0 +1,23 @@
+<button
+  *ngIf="leftArrow$ | async"
+  mat-icon-button
+  class="button button-left"
+  (click)="move(-1)"
+>
+  <mat-icon class="icon">arrow_back_ios</mat-icon>
+</button>
+
+<div
+  #carousel
+  class="carousel"
+>
+  <ng-content></ng-content>
+</div>
+<button
+  *ngIf="rightArrow$ | async"
+  mat-icon-button
+  class="button button-right"
+  (click)="move(1)"
+>
+  <mat-icon>arrow_forward_ios</mat-icon>
+</button>

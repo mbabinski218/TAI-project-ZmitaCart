@@ -1,0 +1,28 @@
+.title {
+  font-size: var(--font-m);
+  line-height: var(--lineHeight-l);
+  font-weight: 600;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-s);
+}
+
+.line {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  margin-block: 18px 6px;
+}
+
+.grey {
+  color: rgb(118, 118, 118);
+  line-height: var(--lineHeight-s);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xxs);
+}

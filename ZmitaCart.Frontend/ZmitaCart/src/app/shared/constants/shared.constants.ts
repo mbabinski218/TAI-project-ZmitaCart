@@ -1,0 +1,1 @@
+export const IMAGE_URL = 'https://zmitacart-a2dugsewaqa9c2gt.westeurope-01.azurewebsites.net/File?name=';

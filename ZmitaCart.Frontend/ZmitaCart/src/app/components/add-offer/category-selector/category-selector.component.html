@@ -1,0 +1,61 @@
+<header
+  class="categoryInfo"
+  *ngIf="isInSubCat"
+>
+  <div
+    class="btn goBack"
+    (click)="goBack(parentCategory)"
+  >
+    <span class="arrowRight">
+      <mat-icon>chevron_left</mat-icon>
+    </span>
+    <span
+      class="goBackToCategory"
+      *ngIf="parentCategory && parentCategory!==undefined else elseBlock"
+    >
+      cofnij do: {{parentCategory.name}}
+    </span>
+
+    <ng-template #elseBlock>
+      <span class="goBackToCategory">
+        cofnij do: wszystkie kategorie
+      </span>
+    </ng-template>
+
+  </div>
+  <h3
+    class="btn header"
+    *ngIf="headCategory!==undefined"
+  >
+    <mat-icon class="icon material-icons-outlined">{{headCategory.iconName}}</mat-icon>
+    <span class="categoryName">{{headCategory.name}}</span>
+  </h3>
+</header>
+
+<section
+  class="categoryInfo"
+  *ngIf="item.name"
+>
+  <mat-icon>{{item?.iconName ?? ''}}</mat-icon>
+  <span class="categoryName">{{item.name}}</span>
+  <span
+    class="arrowRight"
+    *ngIf="item.children!==null"
+  >
+    <mat-icon>
+      chevron_right
+    </mat-icon>
+  </span>
+</section>
+
+<button
+  class="btn"
+  *ngFor="let child of children"
+  (click)="onClick(child)"
+>
+  <pp-category-selector
+    [item]="child"
+    [children]="item.children"
+  >
+  </pp-category-selector>
+</button>

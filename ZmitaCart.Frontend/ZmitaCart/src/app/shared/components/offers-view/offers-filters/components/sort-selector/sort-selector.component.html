@@ -1,0 +1,25 @@
+<form
+  class="select"
+  [formGroup]="form"
+>
+  <span class="title">Sortuj od:</span>
+
+  <select formControlName="sortBy" class="options">
+    <option
+      value="CreatedAscending"
+      selected
+    >
+      najnowszych
+    </option>
+    <option value="CreatedDescending">
+      najstarszych
+    </option>
+    <option value="PriceAscending">
+      najtańszych
+    </option>
+    <option value="PriceDescending">
+      najdroższych
+    </option>
+  </select>
+  <mat-icon class="icon">expand_more</mat-icon>
+</form>

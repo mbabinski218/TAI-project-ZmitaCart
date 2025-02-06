@@ -1,0 +1,71 @@
+<div class="title">
+  <span class="text">{{ details.title }}</span>
+  <div
+    (click)="observe()"
+    class="observe-svg cursor-pointer"
+  >
+    {{ details.isFavourite ? 'OBSERWUJESZ' : 'OBSERWUJ'}}
+    <mat-icon [svgIcon]="details.isFavourite ? 'heart-filled' : 'heart'"></mat-icon>
+  </div>
+</div>
+
+<div
+  *ngIf="details.quantity > 1"
+  class="quantity"
+>
+  <span>dostępne: {{ details.quantity }} szt.</span>
+  <div
+    *ngIf="userLogged"
+    class="buttons"
+  >
+    <button
+      [disabled]="currentQuantity <= 1"
+      mat-icon-button
+      (click)="add(-1)"
+    >
+      <mat-icon class="amount-button">remove</mat-icon>
+    </button>
+    <span class="amount-number">{{ currentQuantity }}</span>
+    <button
+      [disabled]="currentQuantity >= details.quantity"
+      mat-icon-button
+      (click)="add(1)"
+    >
+      <mat-icon class="amount-button">add</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div class="price">
+  {{ (details.price | ppFixPrice) || '-' }}<span class="zl"> zł</span>
+</div>
+
+<!-- <div
+  *ngIf="details.isAvailable"
+  class="button-allegro buy"
+>
+  KUP TERAZ
+</div> -->
+
+<google-pay-button
+  *ngIf="details.isAvailable && userLogged"
+  class="buy"
+  environment="TEST"
+  buttonSizeMode="fill"
+  buttonColor="white"
+  [paymentRequest]="paymentRequest"
+  (loadpaymentdata)="onLoadPaymentData()"
+>
+</google-pay-button>
+
+<!-- <div
+  class="button-allegro chat"
+  (click)="navigateTo('chats')"
+>
+  <mat-icon
+    class="chat-icon"
+    svgIcon="chat"
+  >
+  </mat-icon>
+  NAPISZ
+</div> -->

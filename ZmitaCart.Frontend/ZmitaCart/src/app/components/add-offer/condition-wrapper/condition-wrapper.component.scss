@@ -1,0 +1,35 @@
+.customRadio {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  border-radius: 0.8rem;
+  padding: 0.72rem 0.96rem;
+  border: 1px solid #e7e7e7;
+  cursor: pointer;
+  box-shadow: 0 0.6rem 1.6rem -0.1rem rgba(72, 72, 72, .08);
+  width: 100%;
+  max-width: 30rem;
+}
+
+.active {
+  border: 1px solid #7770bd;
+}
+
+.wrapper:not(.active):hover {
+  border: 1px solid #cfcccc;
+}
+
+.radioTitle {
+  font-size: .96rem;
+  margin-bottom: 5px;
+}
+
+.radioDesc {
+  font-weight: 300;
+  font-size: .96rem;
+}

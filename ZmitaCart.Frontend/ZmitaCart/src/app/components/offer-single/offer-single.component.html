@@ -1,0 +1,56 @@
+<div *ngIf="details$ | async as details; else loading">
+  <div class="horizontal">
+    <div class="left flex">
+      <gallery
+        *ngIf="images.length"
+        class="box"
+        gallerize
+        [items]="images"
+        [counter]="false"
+      >
+      </gallery>
+      <div
+        class="box box-center"
+        *ngIf="!images.length"
+      >
+        <img
+          class="no-image"
+          src="https://upload.wikimedia.org/wikipedia/commons/5/55/Brak_obrazka.svg"
+        >
+      </div>
+      <div class="hide flex">
+        <ng-container [ngTemplateOutlet]="priceDelivery"></ng-container>
+      </div>
+      <pp-offer-description
+        class="box"
+        [details]="details"
+      >
+      </pp-offer-description>
+      <pp-offer-seller
+        class="box"
+        [details]="details"
+      >
+      </pp-offer-seller>
+    </div>
+    <div class="right flex">
+      <ng-container [ngTemplateOutlet]="priceDelivery"></ng-container>
+    </div>
+  </div>
+
+  <ng-template #priceDelivery>
+    <pp-offer-price
+      class="box"
+      [details]="details"
+    >
+    </pp-offer-price>
+    <pp-offer-delivery class="box">
+    </pp-offer-delivery>
+  </ng-template>
+
+</div>
+
+<ng-template #loading>
+  <div class="center">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

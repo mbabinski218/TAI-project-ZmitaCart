@@ -1,0 +1,24 @@
+.isMain {
+  font-size: var(--font-normal);
+  font-weight: 600;
+  line-height: var(--lineHeight-l);
+  color: #000;
+  white-space: nowrap;
+
+  &:hover {
+    color: var(--color-allegro-green);
+    cursor: pointer;
+  }
+}
+
+.isLast {
+  font-size: var(--font-xs);
+  margin-bottom: 3px;
+  color: #767676;
+  white-space: nowrap;
+
+  &:hover {
+    color: var(--color-allegro-green);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,23 @@
+<div class="header">
+  <div class="text">Dane użytkownika</div>
+</div>
+<div class="content">
+  <ng-container *ngIf="userData$ | async as userData; else loading">
+    <ng-container *ngFor="let item of userData">
+      <pp-detail-tile
+        class="detail"
+        [propertyName]="item.name"
+        [icon]="item.icon"
+      >
+        {{ item.value || '-' }}
+      </pp-detail-tile>
+
+    </ng-container>
+  </ng-container>
+</div>
+
+<ng-template #loading>
+  <div class="center">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

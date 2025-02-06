@@ -1,0 +1,61 @@
+<div class="item">
+  <span class="title">Przydatne informacje</span>
+
+  <ul>
+    <li
+      *ngFor="let item of USEFUL"
+      class="link"
+    >
+      <a
+        class="text"
+        [href]="item.link"
+        target="_blank"
+      >{{ item.text }}</a>
+    </li>
+  </ul>
+</div>
+
+<div class="item">
+  <span class="title">Informacje prawne</span>
+
+  <ul>
+    <li
+      *ngFor="let item of LAW"
+      class="link"
+    >
+      <a
+        class="text"
+        [href]="item.link"
+        target="_blank"
+      >{{ item.text }}</a>
+    </li>
+  </ul>
+</div>
+
+<div class="item">
+  <span class="title">Pobierz aplikację</span>
+
+  <div class="buttons">
+    <a
+      class="anchor"
+      href="https://play.google.com/store/apps/details?id=me.pou.app"
+      target="_blank"
+    >
+      <mat-icon
+        class="icon cursor-pointer"
+        svgIcon="android"
+      ></mat-icon>
+    </a>
+
+    <a
+      class="anchor"
+      href="https://apps.apple.com/pl/app/pou/id575154654"
+      target="_blank"
+    >
+      <mat-icon
+        class="icon cursor-pointer"
+        svgIcon="apple"
+      ></mat-icon>
+    </a>
+  </div>
+</div>

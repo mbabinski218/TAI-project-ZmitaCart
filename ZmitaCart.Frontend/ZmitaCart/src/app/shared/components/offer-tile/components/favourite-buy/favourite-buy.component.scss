@@ -1,0 +1,44 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 15px 15px 0;
+}
+
+.svg {
+  align-self: self-end;
+}
+
+.buy {
+  background-color: var(--color-allegro-orange);
+  width: 180px;
+  margin-bottom: 14px;
+  color: white;
+
+  &.disabled {
+    background-color: rgba(0, 0, 0, 15%);
+    color: black;
+
+    pointer-events: none;
+  }
+}
+
+.city {
+  font-size: var(--font-xs);
+  line-height: var(--lineHeight-s);
+  color: rgb(118, 118, 118);
+  font-style: italic;
+  padding: 0 14px 10px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-xxs);
+
+  .icon {
+    font-size: var(--font-m);
+    width: 17px;
+    height: 17px;
+    color: rgb(118, 118, 118);
+  }
+}

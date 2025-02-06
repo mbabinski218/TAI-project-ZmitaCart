@@ -1,0 +1,74 @@
+<div class="header">
+  <div class="text">Zaktualizuj swoje dane adresowe</div>
+</div>
+<form
+  class="content"
+  [formGroup]="form"
+  (submit)="sendForm()"
+>
+  <pp-input
+    appearance="fill"
+    label="Numer telefonu"
+    type="text"
+    controlName="phoneNumber"
+    mask="telephone"
+  >
+  </pp-input>
+
+  <pp-input
+    appearance="fill"
+    label="Kraj"
+    type="text"
+    controlName="country"
+  >
+  </pp-input>
+  <pp-input
+    appearance="fill"
+    label="Miasto"
+    type="text"
+    controlName="city"
+  >
+  </pp-input>
+
+  <pp-input
+    appearance="fill"
+    label="Ulica"
+    type="text"
+    controlName="street"
+  >
+  </pp-input>
+
+  <pp-input
+    appearance="fill"
+    label="Number budynku"
+    type="number"
+    controlName="houseNumber"
+  >
+  </pp-input>
+
+  <pp-input
+    appearance="fill"
+    label="Number mieszkania"
+    type="number"
+    controlName="apartmentNumber"
+    [optional]="true"
+  >
+  </pp-input>
+
+  <pp-input
+    appearance="fill"
+    label="Kod pocztowy"
+    type="text"
+    controlName="postalCode"
+    mask="post-code"
+  >
+  </pp-input>
+
+  <button
+    [disabled]="!form.valid"
+    type="submit"
+    class="button button-login cursor-pointer"
+  >
+    Wyślij
+  </button>
+</form>

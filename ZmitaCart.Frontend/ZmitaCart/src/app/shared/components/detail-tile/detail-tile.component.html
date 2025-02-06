@@ -1,0 +1,21 @@
+<div class="tile__data-wrapper">
+  <p
+    *ngIf="propertyName"
+    class="tile__property-name"
+  >
+    {{ propertyName }}
+  </p>
+  <ng-content></ng-content>
+</div>
+<div
+  *ngIf="icon"
+  class="tile__icon"
+>
+  <mat-icon
+    aria-hidden="false"
+    aria-label="icon"
+    class="material-icons-outlined"
+  >
+    {{ icon }}
+  </mat-icon>
+</div>

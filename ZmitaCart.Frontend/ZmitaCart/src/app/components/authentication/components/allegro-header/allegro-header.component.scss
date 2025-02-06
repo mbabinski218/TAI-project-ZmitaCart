@@ -1,0 +1,33 @@
+@import 'variables/breakpoints';
+
+.header {
+  background: #fff;
+
+  transition: padding-top .2s ease,
+    padding-bottom .2s ease,
+    box-shadow .2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+
+  min-height: 76px;
+}
+
+.content {
+  padding: 16px 24px;
+  max-width: 1248px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.color {
+  color: var(--color-allegro-green);
+
+  line-height: var(--lineHeight-xl);
+  vertical-align: middle;
+  letter-spacing: 2px;
+}
+
+.img {
+  width: 200px;
+}

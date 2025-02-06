@@ -1,0 +1,73 @@
+<pp-offers-filters
+  *ngIf="origin === 'filtered'"
+  (formEmitter)="filterData($event)"
+>
+</pp-offers-filters>
+
+<div class="fix">
+  <div class="header">
+    <div class="text">{{ header }}</div>
+    <div
+      *ngIf="areAnyOffers"
+      class="pagination"
+    >
+      <ng-container [ngTemplateOutlet]="pagination"></ng-container>
+    </div>
+  </div>
+  <div class="content">
+    <ng-container *ngIf="offers$ | async as offers; else loading">
+      <ng-container *ngIf="offers.items.length; else noData">
+        <pp-offer-tile
+          [origin]="origin"
+          [items]="offers.items"
+        >
+        </pp-offer-tile>
+      </ng-container>
+    </ng-container>
+
+    <div
+      *ngIf="areAnyOffers"
+      class="footer"
+    >
+      <ng-container [ngTemplateOutlet]="pagination"></ng-container>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #noData>
+  <div class="text">{{ noDataText }}</div>
+</ng-template>
+
+<ng-template #loading>
+  <div class="center">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+
+<ng-template #pagination>
+  <mat-icon
+    [class.hide]="!canGo.left"
+    class="cursor-pointer"
+    (click)="paginationService.nextPage(-1)"
+  >
+    arrow_back_ios
+  </mat-icon>
+  <div class="page">
+    <input
+      class="input"
+      type="number"
+      [value]="currentPage"
+      #pageNumberInput
+      (keydown.enter)="paginationService.changeToPage(pageNumberInput.value)"
+    >
+    <span>z {{ totalPages }}</span>
+  </div>
+  <mat-icon
+    [class.hide]="!canGo.right"
+    class="cursor-pointer"
+    (click)="paginationService.nextPage(1)"
+  >
+    arrow_forward_ios
+  </mat-icon>
+</ng-template>

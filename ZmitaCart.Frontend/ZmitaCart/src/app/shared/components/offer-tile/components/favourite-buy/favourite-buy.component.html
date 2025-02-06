@@ -1,0 +1,22 @@
+<div
+  (click)="observe(item)"
+  class="observe-svg cursor-pointer svg"
+>
+  {{ item.isFavourite ? 'OBSERWUJESZ' : 'OBSERWUJ'}}
+  <mat-icon [svgIcon]="item.isFavourite ? 'heart-filled' : 'heart'"></mat-icon>
+</div>
+
+<div>
+  <div
+    class="button-allegro buy"
+    [class.disabled]="!item.isAvailable"
+    (click)="item.isAvailable && details(item.id, router)"
+  >
+    {{ item.isAvailable ? 'KUP TERAZ' : 'KUPIONE' }}
+  </div>
+
+  <div class="city">
+    <mat-icon class="icon material-icons-outlined">location_on</mat-icon>
+    {{ item.city || '-' }}
+  </div>
+</div>

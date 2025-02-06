@@ -1,0 +1,91 @@
+--Kategorie
+SET IDENTITY_INSERT Categories ON
+
+    INSERT Categories (Id, Name, IconName, CreatedAt) VALUES (1, 'Elektronika', 'devices', N'2023-06-04 19:54:21.2174737 +02:00')
+    INSERT Categories (Id, Name, IconName, CreatedAt) VALUES (2, 'Moda', 'styler', N'2023-06-04 19:54:21.2174738 +02:00')
+    INSERT Categories (Id, Name, IconName, CreatedAt) VALUES (3, 'Budowa i remont', 'foundation', N'2023-06-04 19:54:21.2174739 +02:00')
+    INSERT Categories (Id, Name, IconName, CreatedAt) VALUES (4, 'Sport', 'sports_basketball', N'2023-06-04 19:54:21.2174740 +02:00')
+    INSERT Categories (Id, Name, IconName, CreatedAt) VALUES (5, 'Zwierzęta', 'pets', N'2023-06-04 19:54:21.2174741 +02:00')
+    INSERT Categories (Id, Name, IconName, CreatedAt) VALUES (6, 'Motoryzacja', 'directions_car', N'2023-06-04 19:54:21.2174742 +02:00')
+    INSERT Categories (Id, Name, IconName, CreatedAt) VALUES (7, 'Kultura i rozrywka', 'menu_book', N'2023-06-04 19:54:21.2174743 +02:00')
+    
+     --Podrzędne dla elektronika
+        INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (8, 'Fotografia',1, N'2023-06-04 19:54:21.2174744 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (11, 'Aparaty cyfrowe',8, N'2023-06-04 19:54:21.2174745 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (12, 'Obiektywy',8, N'2023-06-04 19:54:21.2174746 +02:00')
+    
+    
+        INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (9, 'Komputery',1, N'2023-06-04 19:54:22.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (13, 'Podzespoły komputerowe',9, N'2023-06-04 19:54:22.2174738 +02:00')
+                INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (19, 'Karty graficzne',13, N'2023-06-04 19:54:22.2174739 +02:00')
+                INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (20, 'Pamięć RAM',13, N'2023-06-04 19:54:22.2174740 +02:00')
+                INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (21, 'Procesory',13, N'2023-06-04 19:54:22.2174741 +02:00')
+                    INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (22, 'AMD',21, N'2023-06-04 19:54:22.2174742 +02:00')
+                    INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (23, 'Intel',21, N'2023-06-04 19:54:22.2174743 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (14, 'Laptopy',9, N'2023-06-04 19:54:22.2174744 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (15, 'Oprogramowanie',9, N'2023-06-04 19:54:22.2174745 +02:00')
+    
+    
+        INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (10, 'Telefony i akcesoria',1, N'2023-06-04 19:54:23.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (16, 'Smartfony',10, N'2023-06-04 19:54:23.2174737 +02:00')
+                INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (24, 'Samsung',10, N'2023-06-04 19:54:23.2174737 +02:00')
+                INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (25, 'Apple',10, N'2023-06-04 19:54:23.2174737 +02:00')
+                INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (26, 'Google',10, N'2023-06-04 19:54:23.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (17, 'Akcesoria GSM',10, N'2023-06-04 19:54:23.2174737 +02:00')
+                INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (27, 'Ładowarki',10, N'2023-06-04 19:54:23.2174737 +02:00')
+                INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (28, 'Etui',10, N'2023-06-04 19:54:23.2174737 +02:00')
+    
+    --Podkategorie dla Moda
+    SET IDENTITY_INSERT Categories ON
+        INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (29, 'Odzież',2, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (30, 'Odzież damska',29, N'2023-06-04 19:54:21.2174737 +02:00')
+                INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (35, 'Sukienki',30, N'2023-06-04 19:54:21.2174737 +02:00')
+                INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (36, 'Bluzki',30, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (31, 'Odzież męska',29, N'2023-06-04 19:54:21.2174737 +02:00')
+                INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (37, 'Koszule',31, N'2023-06-04 19:54:21.2174737 +02:00')
+                INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (38, 'Spodnie',31, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (32, 'Akcesoria',29, N'2023-06-04 19:54:21.2174737 +02:00')
+                INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (39, 'Torebki',32, N'2023-06-04 19:54:21.2174737 +02:00')
+                INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (40, 'Biżuteria',32, N'2023-06-04 19:54:21.2174737 +02:00')
+    
+    --Podkategorie dla Budowa i remont
+        INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (33, 'Materiały budowlane',3, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (41, 'Cegły i bloczki',33, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (42, 'Płytki i glazura',33, N'2023-06-04 19:54:21.2174737 +02:00')
+        INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (34, 'Narzędzia',3, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (43, 'Wiertarki',34, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (44, 'Młotki',34, N'2023-06-04 19:54:21.2174737 +02:00')
+    
+    --Podkategorie dla Sport
+        INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (45, 'Sprzęt sportowy',4, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (46, 'Piłki',45, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (47, 'Piłka nożna',45, N'2023-06-04 19:54:21.2174737 +02:00')
+        INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (48, 'Odzież sportowa',4, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (49, 'Buty sportowe',48, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (50, 'Dresy',48, N'2023-06-04 19:54:21.2174737 +02:00')
+
+    --Podkategorie dla Zwierzęta
+        INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (51, 'Artykyły dla zwierząt',5, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (52, 'Dla kotów',51, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (53, 'Dla psów',51, N'2023-06-04 19:54:21.2174737 +02:00')
+        INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (54, 'Zwierzęta żywe',5, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (55, 'Koty',54, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (56, 'Psy',54, N'2023-06-04 19:54:21.2174737 +02:00')
+
+    --Podkategorie dla Motoryzacja
+        INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (57, 'Części samochodowe',6, N'2023-06-04 19:54:21.2174737 +02:00')
+        INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (58, 'Filtry',57, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (59, 'Opony',57, N'2023-06-04 19:54:21.2174737 +02:00')
+        INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (60, 'Akcesoria samochodowe',6, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (61, 'Zapachy',60, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (62, 'Pokrowce',60, N'2023-06-04 19:54:21.2174737 +02:00')
+
+    --Podkategorie dla Kultura i rozrywka
+        INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (63, 'Książki i komiksy',7, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (64, 'Powieści',63, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (65, 'Komiksy',63, N'2023-06-04 19:54:21.2174737 +02:00')
+        INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (66, 'Gry',7, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (67, 'Gry planszowe',66, N'2023-06-04 19:54:21.2174737 +02:00')
+            INSERT Categories (Id, Name, ParentId, CreatedAt) VALUES (68, 'Gry komputerowe',66, N'2023-06-04 19:54:21.2174737 +02:00')
+    
+SET IDENTITY_INSERT Categories OFF

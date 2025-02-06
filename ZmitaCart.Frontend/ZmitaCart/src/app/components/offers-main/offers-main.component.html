@@ -1,0 +1,67 @@
+<ng-container *ngIf="offers$ | async as offers; else loading">
+  <ng-container *ngIf="offers.length; else noData">
+    <div class="offers">
+      <div
+        class="offer"
+        *ngFor="let offer of offers; let i=index"
+      >
+        <pp-carousel
+          [imageWidth]="262"
+          [imagesToScroll]="3"
+          class="category"
+        >
+          <div [ngClass]="'category-border category-image'+i">
+            <div class="title">
+              <div class="text">Może zainteresuje cię: {{ offer.name || '-' }}</div>
+            </div>
+          </div>
+          <ng-container *ngFor="let item of offer.data">
+            <div
+              class="item cursor-pointer"
+              (click)="details(item.id, router)"
+            >
+              <img
+                [src]="item.imageName ? imageUrl + item.imageName : 'https://upload.wikimedia.org/wikipedia/commons/5/55/Brak_obrazka.svg'"
+                class="img"
+              >
+              <div class="content">
+                <div class="name">{{ item.title || '-' }}</div>
+                <div
+                  class="heart"
+                  (click)="observe(item); $event.stopPropagation()"
+                >
+                  <mat-icon
+                    class="svg"
+                    [svgIcon]="item.isFavourite ? 'heart-filled' : 'heart'"
+                  >
+                  </mat-icon>
+                </div>
+                <div class="price">{{ (item?.price | ppFixPrice) || '-' }}<span class="zl"> zł</span></div>
+                <div class="condition">
+                  <mat-icon class="icon material-icons-outlined">verified</mat-icon>
+                  Stan: {{ item.condition || '-' }}
+                </div>
+                <div class="city">
+                  <mat-icon class="icon material-icons-outlined">location_on</mat-icon>
+                  {{ item.city || '-' }}
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </pp-carousel>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>
+
+<ng-template #loading>
+  <div class="center">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+
+<ng-template #noData>
+  <div class="center">
+    Nie znaleziono żadnych ogłoszeń, przepraszamy
+  </div>
+</ng-template>

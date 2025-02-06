@@ -1,0 +1,329 @@
+pp-add-offer {
+  .goHomeBtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #7770bd;
+    opacity: 1;
+    color: white;
+    border: none;
+    transform: translate(25%, 25%);
+    cursor: pointer;
+  }
+
+  .goHomeBtn:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+  }
+
+  .center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    background-color: #fff;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.8rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .16);
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+  }
+
+  .addPhotosInfo {
+    width: 100%;
+    min-height: 6.9rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .addPhotoLabel {
+    font-size: 1.2rem;
+    font-weight: 550;
+    margin-left: 30px;
+  }
+
+  .subInfoLabel {
+    font-weight: lighter;
+    font-size: 0.75em;
+    color: #767676;
+    margin-top: 10px;
+  }
+
+  hr {
+    margin-left: -3.2rem;
+    margin-right: -3.2rem;
+    border: none;
+    height: 1px;
+    color: #767676;
+    background-color: #767676;
+    opacity: 0.25;
+  }
+
+  .addPhotos {
+    min-height: 13.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .addPhotos.dragOver {
+    border-radius: 0.8rem;
+    border: dashed 2px #7770bd;
+  }
+
+  .orDragAndDrop {
+    color: #7770bd;
+    font-weight: 500;
+    margin-top: 10px;
+    cursor: default;
+  }
+
+  .draggingMessage {
+    color: #7770bd;
+    font-weight: 550;
+    font-size: 1.8rem;
+  }
+
+  #fileInput {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  input[type="file"] {
+    opacity: 0;
+  }
+
+  input[type="file"]::file-selector-button {
+    cursor: pointer;
+  }
+
+  .customButton {
+    color: red;
+  }
+
+  .addOfferProps {
+    min-height: 18rem;
+  }
+
+  .required {
+    color: #9b9b9b;
+    font-size: 1.2rem;
+    font-weight: bolder;
+  }
+
+  .addTitle {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  label {
+    font-size: 1.2rem;
+    font-weight: 550;
+  }
+
+  .titleLength {
+    display: flex;
+    justify-content: flex-end;
+    font-weight: lighter;
+    font-size: 1.1em;
+    color: #767676;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 30rem;
+  }
+
+  .customForm {
+    width: 100%;
+    max-width: 30rem;
+    display: block;
+    border-radius: 0.8rem;
+    padding: 0.72rem 0.96rem;
+    border: 1px solid #e7e7e7;
+    margin-top: 0.5rem;
+    font-size: 0.96rem;
+    color: #000;
+    line-height: 1.375;
+    font-style: normal;
+  }
+
+  .customForm:hover {
+    border: 1px solid #cfcccc;
+    transition: border 0.2s ease;
+  }
+
+  .addDescription {
+    margin-bottom: 50px;
+  }
+
+  textarea.customForm {
+    height: 130px;
+    resize: vertical;
+    font-family: inherit;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .loadCategoriesButton {
+    display: block;
+    margin-top: 10px;
+    font-size: .9rem;
+    font-weight: 600;
+    background-color: #fff;
+    border: none;
+    color: #2bb9a3;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+  }
+
+  .loadCategoriesButton:hover {
+    cursor: pointer;
+  }
+
+  .pickedPropInfo {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 30rem;
+    font-weight: 500;
+    color: #7770bd;
+    margin-top: 10px;
+  }
+
+  .categoryPicker {
+    margin-top: 10px;
+    height: 100%;
+    border-radius: 0.8rem;
+    border: 1px solid #e7e7e7;
+    ;
+    max-width: 30rem;
+    overflow: auto;
+  }
+
+  .price {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  #qForm {
+    width: 6.7rem;
+    margin-bottom: 50px;
+  }
+
+  #submitBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .blank {
+    margin-bottom: 30px;
+  }
+
+  .imagePreviewWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: auto;
+    padding: .9rem;
+  }
+
+  .imagePreview img {
+    margin-right: 20px;
+    max-width: 200px;
+    height: 150px;
+    border: 1px #7770bd solid;
+    border-radius: 0.8rem;
+    padding: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .16);
+    overflow: visible;
+  }
+
+  .imagePreview {
+    position: relative;
+  }
+
+  .deletePhotoBtn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  .deletePhotoBtn {
+    width: 25px;
+    height: 25px;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    background-color: #7770bd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .16);
+    text-align: center;
+    padding: 1px;
+  }
+
+  .deletePhotoBtn:hover {
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+  }
+
+  .button-allegro.photos {
+    position: relative;
+    color: #7770bd;
+    background-color: #edecf7;
+    border: none;
+    font-weight: 550;
+    opacity: 0.9;
+  }
+
+  .button-allegro.photos:hover {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+  }
+
+  .createOfferWrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .button-allegro.submit {
+    background-color: #6256b1;
+    border: none;
+    color: white;
+    width: 70%;
+  }
+
+  .button-allegro.submit:disabled {
+    cursor: default;
+    opacity: 0.4;
+  }
+
+  .available {
+    margin-top: 50px;
+  }
+}

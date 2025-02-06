@@ -1,0 +1,66 @@
+<div
+  class="cursor-pointer"
+  (click)="opened = !opened"
+  ppClickOutside
+  (ppClickOutside)="opened = false"
+>
+  <div
+    *ngIf="!emptyData; else userIcon"
+    class="logo paint"
+  >
+    {{ userData.firstName }}
+    <mat-icon svgIcon="arrow"></mat-icon>
+  </div>
+
+  <ng-template #userIcon>
+    <div class="paint paint-resize">
+      <mat-icon svgIcon="user"></mat-icon>
+      <mat-icon svgIcon="arrow"></mat-icon>
+    </div>
+  </ng-template>
+</div>
+
+
+<ng-container *ngIf="!emptyData; else login">
+  <div
+    *ngIf="opened"
+    class="container"
+  >
+    <ul class="list">
+      <li
+        class="item paint"
+        [routerLink]="RoutesPath.ACCOUNT"
+        fragment="credentials"
+      >
+        <mat-icon svgIcon="user-basic"></mat-icon>
+        Mój ZmitaCart
+      </li>
+      <div class="line"></div>
+      <li
+        class="item paint"
+        (click)="logout()"
+      >
+        <mat-icon svgIcon="logout"></mat-icon>
+        Wyloguj (Client:{{ userData.id }})
+      </li>
+    </ul>
+  </div>
+</ng-container>
+
+
+<ng-template #login>
+  <div
+    *ngIf="opened"
+    class="container"
+  >
+    <ul class="list">
+      <li
+        class="item paint"
+        [routerLink]="LOGIN_LINK"
+      >
+        <mat-icon svgIcon="allegro"></mat-icon>
+        Zaloguj kontem aregro
+      </li>
+    </ul>
+  </div>
+</ng-template>

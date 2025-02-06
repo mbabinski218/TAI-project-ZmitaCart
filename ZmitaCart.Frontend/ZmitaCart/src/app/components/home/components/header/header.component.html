@@ -1,0 +1,139 @@
+<div class="header">
+  <div
+    class="widthSetter content"
+    [class.hide]="addOfferHidden$ | async"
+  >
+    <div
+      class="menu"
+      (mouseleave)="overlayService.setState(false)"
+      (mouseenter)="overlayService.setState(true)"
+    >
+      <mat-icon
+        class="svg svg-menu"
+        svgIcon="menu"
+      >
+      </mat-icon>
+
+      <pp-categories-menu
+        *ngIf="isShowCategories$ | async"
+        [categories]="superiorCategories$ | async"
+      ></pp-categories-menu>
+    </div>
+
+    <div
+      class="image cursor-pointer"
+      [routerLink]="['/']"
+    >
+      <mat-icon
+        class="img"
+        svgIcon="ZmitaCart"
+      >
+      </mat-icon>
+    </div>
+
+    <form
+      *ngIf="searchShown$ | async"
+      class="form"
+      [formGroup]="form"
+    >
+      <div class="search-form">
+        <div class="relative">
+          <input
+            placeholder="czego szukasz?"
+            class="input"
+            formControlName="input"
+            (keydown.enter)="find(); $event.preventDefault();"
+          >
+          <mat-icon
+            *ngIf="canShowClearInput"
+            class="icon cursor-pointer"
+            (click)="clearInput()"
+          >
+            close
+          </mat-icon>
+        </div>
+        <mat-icon
+          *ngIf="!isBig"
+          class="svg fix"
+          svgIcon="find"
+          (click)="find()"
+        >
+        </mat-icon>
+      </div>
+
+      <div class="categories-form">
+        <select
+          class="select cursor-text"
+          formControlName="category"
+        >
+          <option value="-1">
+            --brak--
+          </option>
+          <ng-container *ngFor="let category of superiorCategories$ | async">
+            <option [value]="category.id">
+              {{ category.name }}
+            </option>
+          </ng-container>
+        </select>
+        <mat-icon
+          class="svg fix"
+          svgIcon="find"
+          (click)="find()"
+        >
+        </mat-icon>
+      </div>
+    </form>
+
+    <div class="actions">
+      <mat-icon
+        *ngIf="!isBig"
+        [class.add]="addOfferHidden$ | async"
+        class="svg"
+        svgIcon="add"
+        (click)="goToAddOffer()"
+      >
+      </mat-icon>
+
+      <div
+        *ngIf="{ likedCount: likedCount$ | async} as data"
+        class="fixer"
+      >
+        <mat-icon
+          class="svg"
+          svgIcon="heart"
+          (click)="navigateTo('observed')"
+        >
+        </mat-icon>
+        <mat-icon
+          class="badge"
+          [matBadge]="data.likedCount || null"
+          matBadgeSize="medium"
+        >
+        </mat-icon>
+      </div>
+
+      <div
+        *ngIf="isAdmin"
+        class="fixer"
+      >
+        <mat-icon
+          class="svg"
+          svgIcon="logs"
+          (click)="navigateToLogs()"
+        >
+        </mat-icon>
+      </div>
+
+      <pp-login-menu></pp-login-menu>
+    </div>
+
+    <a
+      *ngIf="isBig"
+      [class.add]="addOfferHidden$ | async"
+      class="button button-allegro"
+      (click)="goToAddOffer()"
+    >
+      Wystaw
+    </a>
+  </div>
+</div>

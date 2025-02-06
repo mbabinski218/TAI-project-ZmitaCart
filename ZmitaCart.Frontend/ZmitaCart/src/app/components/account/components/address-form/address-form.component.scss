@@ -1,0 +1,13 @@
+:host {
+  width: 100%;
+}
+
+.button {
+  width: 50%;
+  background-color: var(--color-allegro-orange);
+  color: white;
+  border: 0;
+  padding-inline: 16px;
+  height: 40px;
+  place-self: end;
+}

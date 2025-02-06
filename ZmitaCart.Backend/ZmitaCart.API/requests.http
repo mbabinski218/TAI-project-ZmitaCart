@@ -1,0 +1,70 @@
+﻿### login
+GET https://localhost:44333/user/login?Email={{email}}&Password={{password}}
+Authorization: Bearer {{token}}
+
+# ### request1
+#GET https://localhost:44333/user/feedback?userId=2
+#
+# ### request2
+#GET https://localhost:44333/category/getAllSuperiors
+#
+# ### request3
+#GET https://localhost:44333/category/getBySuperiorId?SuperiorId=5
+#
+# ### request4
+#GET https://localhost:44333/offer/byCategory?CategoryId=5
+#
+# ### request5
+#GET https://localhost:44333/offer/2
+#
+# ### request6
+#GET https://localhost:44333/offer/bought
+
+#### request7
+#POST https://localhost:44333/offer
+#accept: */*
+#Content-Type: multipart/form-data; boundary=WebAppBoundary
+#
+#--WebAppBoundary
+#Content-Disposition: form-data; name="Title"
+#
+#title
+#--WebAppBoundary
+#Content-Disposition: form-data; name="Description"
+#
+#desc
+#--WebAppBoundary
+#Content-Disposition: form-data; name="Price"
+#
+#33
+#--WebAppBoundary
+#Content-Disposition: form-data; name="Quantity"
+#
+#3
+#--WebAppBoundary
+#Content-Disposition: form-data; name="Condition"
+#
+#New
+#--WebAppBoundary
+#Content-Disposition: form-data; name="CategoryId"
+#
+#5
+#--WebAppBoundary
+#Content-Disposition: form-data; name="Pictures"; filename="Babiński.Mateusz.1.jpg"
+#
+#< D:\Studia\BIAI - semestr 6\Babiński.Mateusz.1.jpg
+#--WebAppBoundary
+#Content-Disposition: form-data; name="Pictures"; filename="Babiński.Mateusz.3.jpg"
+#
+#< D:\Studia\BIAI - semestr 6\Babiński.Mateusz.3.jpg
+#--WebAppBoundary--
+
+#### postExample
+#POST https://localhost:44333/offer/buy
+#accept: */*
+#Content-Type: application/json
+#   <--- ten enter jest potrzebny
+#{
+#  "offerId": 19,
+#  "quantity": 1
+#}

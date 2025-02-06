@@ -1,0 +1,153 @@
+@import 'variables/breakpoints';
+
+:host {
+  background-color: var(--background-login-color);
+  padding-top: 16px;
+  padding-bottom: 24px;
+  flex: 1;
+}
+
+.content {
+  margin-inline: auto;
+  display: flex;
+  gap: var(--gap-m);
+}
+
+.fixWidth {
+  padding-inline: 30px;
+  width: 65%;
+
+  @media (max-width: $screen-1200) {
+    width: 55%;
+  }
+
+  @media (max-width: $screen-768) {
+    width: 100%;
+    margin: unset;
+  }
+}
+
+.regulamin {
+  padding-top: 8px;
+  margin-inline: auto;
+  font-size: var(--font-xs);
+
+  .link {
+    padding: 0;
+    color: var(--color-allegro-orange);
+    text-decoration: none;
+  }
+}
+
+.box {
+  width: 100%;
+  min-width: 400px;
+  padding-inline: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  transition: padding-top .2s ease,
+    padding-bottom .2s ease,
+    box-shadow .2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+}
+
+.nextBox {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--gap-s);
+  padding-block: 10px;
+}
+
+.register {
+  color: var(--color-allegro-green);
+
+  line-height: var(--lineHeight-xl);
+  vertical-align: middle;
+  letter-spacing: 2px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.button {
+  width: 100%;
+  background-color: var(--color-allegro-orange);
+  color: white;
+  border: 0;
+  padding-inline: 16px;
+  height: 40px;
+
+  &-bottom {
+    background-color: #fff;
+    color: #222;
+    border: 1px solid #aaa;
+    margin-bottom: 15px;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.img {
+  position: absolute;
+  left: 8px;
+}
+
+.margin {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.get {
+  width: 100%;
+  margin-top: 24px;
+  margin-bottom: 16px;
+
+  .text {
+    color: var(--color-allegro-green);
+    text-decoration: none !important;
+  }
+}
+
+.line {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.or {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-xs);
+
+  width: 100%;
+  padding-block: 12px;
+}
+
+.login {
+  font-size: var(--font-l);
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 14px;
+
+  font-family: 'Roboto';
+  width: 100%;
+}
+
+.remove {
+  @media (max-width: $screen-1200) {
+    display: none;
+  }
+}

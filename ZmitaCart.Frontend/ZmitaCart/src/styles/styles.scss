@@ -1,0 +1,151 @@
+@use '@angular/material' as mat;
+@use 'variables/palette';
+@import 'variables/breakpoints';
+
+@include mat.core();
+
+$frontend-primary: mat.define-palette(palette.$pp-myPalette, 500);
+$frontend-accent: mat.define-palette(palette.$pp-myPalette, A400);
+$frontend-warn: mat.define-palette(mat.$red-palette);
+$my-typography: mat.define-typography-config();
+
+$frontend-theme: mat.define-light-theme((color: (primary: $frontend-primary,
+        accent: $frontend-accent,
+        warn: $frontend-warn,
+      ),
+      typography: $my-typography,
+    ));
+
+@include mat.all-component-themes($frontend-theme);
+
+// 24, 16, 40, 20
+
+:root {
+  --gap-xxs: 4px;
+  --gap-xs: 8px;
+  --gap-s: 16px;
+  --gap-m: 20px;
+  --gap-l: 30px;
+
+  --font-xs: 12px;
+  --font-normal: 14px;
+  --font-m: 16px;
+  --font-l: 24px;
+  --font-xl: 36px;
+
+  --lineHeight-s: 16px;
+  --lineHeight-m: 20px;
+  --lineHeight-l: 24px;
+  --lineHeight-xl: 40px;
+
+  --color-allegro-purple: #6256b1;
+  --color-allegro-orange: #ff5a00;
+  --color-allegro-green: #00a790;
+  --color-error: #ff6961;
+  --color-success: #77dd77;
+  --color-whitish: #e3e7ec;
+
+  --background-color: #f4f8fc;
+  --background-login-color: #eceff1;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: var(--background-color);
+
+  font-family: "Open Sans", Roboto, "Helvetica Neue", sans-serif;
+  color: #222;
+  font-size: var(--font-normal);
+  font-weight: 400;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-text {
+  cursor: text;
+}
+
+.maxWidth {
+  width: 100%;
+}
+
+.widthSetter {
+  --max-width: 1360px;
+  --padding: 24px;
+
+  padding: 0 var(--padding, 0);
+  max-width: calc(2*var(--padding, 0px) + var(--max-width));
+  margin: 0 auto;
+
+  @media (min-width: $screen-1200) {
+    --padding: 40px;
+  }
+}
+
+//usuwanie prompt'a google'owego z prawego rogu ez
+#credential_picker_container {
+  display: none;
+}
+
+.observe-svg {
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-xxs);
+
+  font-size: var(--font-normal);
+  line-height: var(--lineHeight-l);
+  font-weight: 600;
+  letter-spacing: 0.4px;
+
+  filter: brightness(0) saturate(100%) invert(41%) sepia(40%) saturate(4250%) hue-rotate(147deg) brightness(98%) contrast(101%);
+}
+
+.button-allegro {
+  height: 40px;
+  font-weight: 600;
+  line-height: var(--lineHeight-l);
+  text-align: center;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 30px;
+}
+
+.mat-mdc-snack-bar-container {
+  &.error-snackbar {
+    --mdc-snackbar-container-color: var(--color-error);
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+  }
+
+  &.success-snackbar {
+    --mdc-snackbar-container-color: var(--color-success);
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+  }
+
+  &.prank-snackbar {
+    --mdc-snackbar-container-color: var(--color-allegro-orange);
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+  }
+}

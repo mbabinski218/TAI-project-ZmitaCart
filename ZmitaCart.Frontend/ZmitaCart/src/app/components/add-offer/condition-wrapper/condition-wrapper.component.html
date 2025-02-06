@@ -1,0 +1,11 @@
+<li *ngFor="let item of items; let i = index">
+  <label [ngClass]="selectedIndex === i ? 'wrapper active' : 'wrapper'">
+    <input type="radio" (click)="selectItem(i)" class="customRadio" name="condition" [value]="condition">
+    <div class="radioTitle">
+      {{item.title}}
+    </div>
+    <div class="radioDesc">
+      {{item.description}}
+    </div>
+  </label>
+</li>

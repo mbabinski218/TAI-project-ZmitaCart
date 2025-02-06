@@ -1,0 +1,20 @@
+pp-quality-checkboxes {
+  .title {
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .mat-mdc-checkbox {
+    --mdc-checkbox-selected-focus-icon-color: #00a790;
+    --mdc-checkbox-selected-hover-icon-color: #00a790;
+    --mdc-checkbox-selected-icon-color: #00a790;
+    --mdc-checkbox-selected-pressed-icon-color: #00a790;
+    --mdc-checkbox-selected-focus-state-layer-color: #00a790;
+    --mdc-checkbox-selected-hover-state-layer-color: #00a790;
+    --mdc-checkbox-selected-pressed-state-layer-color: #00a790;
+  }
+
+  .form {
+    user-select: none;
+  }
+}

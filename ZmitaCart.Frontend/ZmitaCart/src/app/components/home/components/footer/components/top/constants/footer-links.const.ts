@@ -1,38 +1,38 @@
 export const USEFUL: Links[] = [
   {
     text: 'Jak to działa',
-    link: 'https://youtu.be/yjNcXPtNQdE',
+    link: '/',
   },
   {
     text: 'Napisz do nas',
-    link: 'https://www.youtube.com/watch?v=p7VTM4XgOOM',
+    link: '/',
   },
   {
     text: 'Allegro Gadane dla sprzedających',
-    link: 'https://www.filmweb.pl/film/Scott+Pilgrim+kontra+świat-2010-220748',
+    link: '/',
   },
   {
     text: 'Allegro Gadane dla kupujących',
-    link: 'https://www.filmweb.pl/news/"Ariel".+Disney+Junior+ogłasza+serial+inspirowany+"Małą+syrenką"-151161',
+    link: '/',
   },
   {
     text: 'Mapa miejscowości',
-    link: 'https://www.youtube.com/watch?v=F9ipKnoc0A4',
+    link: '/',
   },
 ];
 
 export const LAW: Links[] = [
   {
     text: 'Regulamin',
-    link: 'https://www.youtube.com/watch?v=md4rmVv5qDU',
+    link: '/',
   },
   {
     text: 'Polityka plików "cookies"',
-    link: 'https://www.youtube.com/watch?v=HiLKVdNJt_o',
+    link: '/',
   },
   {
     text: 'Udostępnianie lokalizacji',
-    link: 'https://youtu.be/AFhZxua-2P8',
+    link: '/',
   },
 ];
 
